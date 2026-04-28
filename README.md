@@ -1,69 +1,38 @@
-# Compiler - lexical analyzer
+# Compiler - Lexical Analyzer
 
 ## Project Description
-This project corresponds to the first stage of a compiler developed as part of the **Compilers and Interpreters** course at the **Universidad Nacional del sur**. The goal of this phase is to implement a **lexical analyzer**, which processes a source code, identifies and categorizes different tokens of the language, and properly manages lexical errors.
 
-## Key Features
-- **Token recognition:** Identification of keywords, identifiers, literals, and operators.
-- **Error handling:** Implementation of exceptions for lexical error detection.
-- **Modular organization:** Separation of the lexical analyzer and error handling into independent packages.
-- **Detailed error reporting:** Indicates the line and column number of the error and highlights the part of the code where it occurred.
+This project corresponds to the first stage of a compiler developed for the **Compilers and Interpreters** course at the **Universidad Nacional del Sur**.
 
-## Installation Instructions
-### Requirements
-- **Java 8 or higher**
-- **Java Compiler (`javac`)**
+The main goal of this stage is to implement a **lexical analyzer** capable of reading source code, identifying and classifying tokens, and reporting lexical errors in a clear and detailed way.
 
-### Compilation
-1. Navigate to the project folder:
-   ```sh
-   cd /path/to/your/project
-   ```
-2. Compile the main file `Main.java`:
-   ```sh
-   javac Main.java
-   ```
-
-### Execution
-1. Run the program providing an input file:
-   ```sh
-   java Main /path/to/input/file.txt
-   ```
-   **Note:** It is recommended to use absolute paths to avoid errors.
-
-## Project Structure
-```
-/project-root
-├── src/
-│   ├── lexicalanalyzer/
-│   │   ├── LexicalAnalyzer.java
-│   │   ├── Keyword.java
-│   │   ├── Token.java
-│   ├── exceptions/
-│   │   ├── LexicalException.java
-│   │   ├── LongIntException.java
-│   │   ├── FloatException.java
-│   ├── Main.java
-│
-└── README.md
-```
-
-
-## Error Handling and Exceptions
-The analyzer handles the following errors:
-- **`LexicalException`**: Thrown when an unrecognized symbol is found.
-- **`LongIntException`**: Thrown if an integer literal exceeds 9 digits.
-- **`FloatException`**: Thrown if a floating-point literal is malformed.
-
-## Achievements
-- **Detailed error reporting** with line number, column number, and descriptive message.
-- **Handling of floating-point literals** following Java syntax.
-- **Error recovery** allowing the analysis to continue after detecting an error.
-- **Early submission** 48 hours before the deadline.
-
-## Conclusion
-This first stage of the compiler successfully developed a robust and modular lexical analyzer, focusing on error detection and reporting. The project's structure allows for future expansion into later stages, such as syntactic and semantic analysis.
+The analyzer was implemented in **Java** using a state-machine-based approach, where each state is responsible for recognizing a specific type of token.
 
 ---
-Developed by **Candela Ledesma** - **Universidad Nacional del Sur** - 2024
 
+## Key Features
+
+- **Token recognition:** identifies keywords, identifiers, literals, operators, and punctuation symbols.
+- **Keyword detection:** recognizes reserved words such as `class`, `if`, `else`, `while`, `return`, `public`, `static`, `void`, `int`, `float`, and others.
+- **Literal handling:** supports integer, character, string, and floating-point literals.
+- **Operator recognition:** supports simple and compound operators such as `+`, `-`, `*`, `/`, `+=`, `-=`, `==`, `!=`, `<=`, `>=`, `&&`, and `||`.
+- **Detailed error reporting:** reports the line number, column number, invalid lexeme, and the corresponding source line.
+- **Error recovery:** continues analyzing the source code after detecting a lexical error, allowing multiple errors to be reported in a single execution.
+- **Modular organization:** separates lexical analysis, token representation, keyword handling, and custom exceptions into independent classes/packages.
+
+---
+
+## Requirements
+
+- Java 8 or higher
+- Java compiler (`javac`)
+
+---
+
+## Installation and Execution
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/candela-ledesma/compiler-lexical-analyzer.git
+cd compiler-lexical-analyzer
